@@ -31,8 +31,10 @@ export function useHttpClient() {
 
         return data;
       } catch (error) {
-        setError(error.message);
-        throw error;
+        if (error.name !== 'AbortError') {
+          setError(error.message);
+          throw error;
+        }
       } finally {
         setIsLoading(false);
       }
