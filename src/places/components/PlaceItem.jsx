@@ -91,7 +91,7 @@ function PlaceItem({
             <Button inverse onClick={openMapHandler}>
               View on Map
             </Button>
-            {auth.isLoggedIn && (
+            {auth.userId === creatorId && (
               <>
                 <Button to={`/places/${id}`}>Edit</Button>
 
