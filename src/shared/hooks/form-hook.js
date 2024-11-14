@@ -38,13 +38,13 @@ const formReducer = (state, action) => {
 };
 
 export function useForm(initialInputs, initialFormValidity) {
-  const [formState, disptach] = useReducer(formReducer, {
+  const [formState, dispatch] = useReducer(formReducer, {
     inputs: initialInputs,
     isValid: initialFormValidity,
   });
 
   const inputHandler = useCallback((id, value, isValid) => {
-    disptach({
+    dispatch({
       type: 'INPUT_CHANGE',
       value: value,
       isValid: isValid,
@@ -53,7 +53,7 @@ export function useForm(initialInputs, initialFormValidity) {
   }, []);
 
   const setFormData = useCallback((inputData, formValidity) => {
-    disptach({
+    dispatch({
       type: 'SET_DATA',
       inputs: inputData,
       formIsValid: formValidity,
