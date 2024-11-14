@@ -82,7 +82,7 @@ function Auth() {
             'Content-Type': 'application/json',
           }
         );
-        auth.login(data.user.id);
+        auth.login(data.userId, data.token);
       } catch (error) {
         console.log(error);
       }
@@ -98,7 +98,7 @@ function Auth() {
           'POST',
           formData
         );
-        auth.login(data.user.id);
+        auth.login(data.userId, data.token);
       } catch (error) {
         console.log(error);
       }
